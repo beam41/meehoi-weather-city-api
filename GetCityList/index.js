@@ -25,13 +25,12 @@ module.exports = async function (context, req) {
     } else {
       context.res = {
         status: 403,
-        body: `Content too long (currLength: ${body.length})`,
+        body: { contentLength: body.length },
       };
     }
   } else {
     context.res = {
       status: 403,
-      body: "Please includes search string",
     };
   }
 };
